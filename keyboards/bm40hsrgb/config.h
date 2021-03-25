@@ -50,3 +50,13 @@
 #ifdef RGB_DI_PIN
     #define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 #endif
+
+/* Tap Dance */
+#define TAPPING_TERM 150
+/* #define TAPPING_TERM_PER_Key */
+/* #define PERMISSIVE_HOLD_PER_KEY */
+/* #define IGNORE_MOD_TAP_INTERRUPT_PER_KEY */
+
+
+/* Space Cadet */
+#define RSPC_KEYS KC_RSFT, KC_RSFT, KC_SCOLON
