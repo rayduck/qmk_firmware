@@ -66,54 +66,54 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | G/Esc|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   '  |^/Ent |
+ * | G/Esc|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   '  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | S/:  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Numpad| Ctrl | Alt  |S/Bksp|Symbol|    Space    |Number| S/Left | Down |  Up  |Fn/Rt |
+ * |Numpad| Ctrl | Alt  | GUI  |Symbol|    Space    |Number| Left | Down |  Up  |Fn/Rt |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_mit(
     KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
-    LGUI_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_QUOT, LCTL_T(KC_ENT),
+    LGUI_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_QUOT, KC_ENT,
     KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSPC,
-    MO(_NUMPAD), KC_LCTL, KC_LALT, LSFT_T(KC_BSPC), MO(_SYMBOL), KC_SPC, MO(_NUMBER), LSFT(KC_LEFT), KC_DOWN, KC_UP, LT(_FNKEY,KC_RGHT)
+    MO(_NUMPAD), KC_LCTL, KC_LALT, KC_LGUI, MO(_SYMBOL), KC_SPC, MO(_NUMBER), KC_LEFT, KC_DOWN, KC_UP, LT(_FNKEY,KC_RGHT)
 ),
 
 /* Symbol
  * ,-----------------------------------------------------------------------------------.
- * | S+Tab|      |   @  |   #  |      |      |      |      |   [  |   ]  |      | Del  |
+ * |   ~  |      |   @  |   #  |      |      |      |   <  |   [  |   ]  |   >  | Del  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   !  |   $  |   %  |   ^  |      |      |   (  |   )  |   {  |   }  |  |   |
+ * |      |   !  |   $  |   %  |   ^  |      |      |   (  |   )  |   {  |   }  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   ~  |      |      |   &  |      |      |   *  |   <  |   >  |   ?  |      |
+ * |      |      |      |      |   &  |      |      |   *  |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |Commnd|      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_SYMBOL] = LAYOUT_planck_mit(
-    LSFT(KC_TAB), KC_NO, KC_AT, KC_HASH, KC_NO, KC_NO, KC_NO, KC_NO, KC_LBRC, KC_RBRC, KC_NO, KC_DEL,
-    KC_TRNS, KC_EXLM, KC_DLR, KC_PERC, KC_CIRC, KC_NO, KC_NO, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_PIPE,
-    KC_TRNS, KC_TILD, KC_NO, KC_NO, KC_AMPR, KC_NO, KC_NO, KC_ASTR, KC_LT, KC_GT, KC_QUES, KC_TRNS,
+    KC_TILD, KC_NO, KC_AT, KC_HASH, KC_NO, KC_NO, KC_NO, KC_LT, KC_LBRC, KC_RBRC, KC_GT, KC_DEL,
+    KC_TRNS, KC_EXLM, KC_DLR, KC_PERC, KC_CIRC, KC_NO, KC_NO, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_TRNS,
+    KC_TRNS, KC_NO, KC_NO, KC_NO, KC_AMPR, KC_NO, KC_NO, KC_ASTR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
 /* Number
  * ,-----------------------------------------------------------------------------------.
- * |      |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |  Del |
+ * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   1  |   4  |   5  |   6  |      |      |   +  |   -  |   =  |   "  |  \   |
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   `  |      |      |   7  |      |      |   0  |      |      |      |      |
+ * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |Pg Up |Pg Dn |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |S/Del |Commnd|             |      |      |      |      |      |
+ * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_NUMBER] = LAYOUT_planck_mit(
-    KC_TRNS, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL,
+    KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL,
     KC_TRNS, KC_1, KC_4, KC_5, KC_6, KC_NO, KC_NO, KC_PLUS, KC_MINS, KC_EQL, KC_DQUO, KC_BSLS,
-    KC_TRNS, KC_GRAVE, KC_NO, KC_NO, KC_7, KC_NO, KC_NO, KC_0, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, LSFT_T(KC_DEL), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    KC_TRNS, KC_NO, KC_NO, KC_NO, KC_7, KC_NO, KC_NO, KC_0, KC_TRNS, KC_TRNS, KC_TRNS, KC_SCLN,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
 /* Adjust
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      | Reset|Debug | RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|  Del |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |QWERTY|      |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -142,22 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_MOUSE] = LAYOUT_planck_mit(KC_NO, KC_NO, KC_NO, KC_MS_U, KC_NO, KC_NO, KC_NO, KC_NO, KC_WH_D, KC_NO, KC_ACL0, KC_NO, TO(_QWERTY), KC_NO, KC_MS_L, KC_MS_D, KC_MS_R, KC_NO, KC_NO, KC_BTN1, KC_BTN2, KC_WH_U, KC_ACL1, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_ACL2, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO),
 
-/* Command
- * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |   _  |   |  |   `  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      | Mouse|      |      |   \  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |    Config   |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_COMMAND] = LAYOUT_planck_mit(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_UNDS, KC_PIPE, KC_GRAVE, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TO(_MOUSE), KC_NO, KC_NO, KC_BSLS, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, TO(_ADJUST), KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO)
+[_COMMAND] = LAYOUT_planck_mit(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TO(_MOUSE), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, TO(_ADJUST), KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO)
 
 };
 
